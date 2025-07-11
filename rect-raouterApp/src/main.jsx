@@ -10,12 +10,12 @@ import {
 import About from './componants/About/About.jsx';
 import Contact from './componants/Contact/Contact.jsx';
 import Github from './componants/Github/Github.jsx';
-import Github1 from './componants/GitHub1/GitHub1.jsx';
+import GithubProfile from './componants/GithubProfile/Profile.jsx';
 import Home from './componants/Home/Home.jsx';
 import Layout from './componants/Layout.jsx';
+import Profile, { apidataLoader } from './componants/Profile/Profile.jsx';
 import User from './componants/User/User.jsx';
 import UserProfile from './componants/UserProfile/UserProfile.jsx';
-
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,11 +29,19 @@ const router = createBrowserRouter(
       <Route path='contact' element={<Contact />} />
 
       <Route path='user' element={<User />} >
-        <Route path='profile/:userid' element={<UserProfile />} />  // Dynamic route to capture userId
-      </Route>                                                   //  Example of dynamic nested route with parameter
+        <Route path='profile/:userid' element={<UserProfile />} />     // Dynamic route to capture userId
+      </Route>                                                      //  Example of dynamic nested route with parameter
 
       <Route path='github' element={<Github />} >
-        <Route path='github1' element={<Github1 />} /> // Example of nested route
+        <Route
+          path='GithubProfile'
+          element={<GithubProfile />}
+        />
+        <Route
+          loader={apidataLoader}
+          path='Profile'
+          element={<Profile />}
+        />
       </Route>
     </Route>
   )
