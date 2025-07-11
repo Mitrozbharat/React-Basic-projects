@@ -37,6 +37,9 @@ const router = createBrowserRouter(
           path='GithubProfile'
           element={<GithubProfile />}
         />
+
+        // use the loader to get optimize the performace in data fetch and make application faster
+
         <Route
           loader={apidataLoader}
           path='Profile'
