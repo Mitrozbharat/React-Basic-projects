@@ -27,8 +27,8 @@ function App() {
       let char = Math.floor(Math.random() * str.length) + 1;
       password += str.charAt(char)
     }
-
     setPassword(password)
+
   }, [length, includeNumbers, includeSpecialChars, setPassword])
 
 
@@ -66,7 +66,6 @@ function App() {
             <input type='checkbox'
               defaultChecked={includeNumbers}
               onChange={() => { setIncludeNumbers((prev) => !prev) }}
-
               className='m-1' />
 
             <label className='form-label m-4'>char Allowed:</label>

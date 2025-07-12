@@ -5,14 +5,15 @@ const Counter = () => {
 
     const [count, setCount] = React.useState(0);
 
-    const increment = () => {
+    const increment = async () => {
 
         if (count >= 20) {
             alert("Counter can't be less than 20");
+            return;
         }
         setCount(count + 1);
     }
-    const decrement = () => {
+    const decrement = async () => {
         if (count <= 0) {
             alert("Counter can't be less than 0");
             return;
@@ -23,8 +24,8 @@ const Counter = () => {
     return (
         <div>
             <h2 style={{ textAlign: 'center' }}> Counter: {count}</h2>
-            <button style={{ textAlign: 'center' }} onClick={increment}> Increment</button>
-            <button style={{ textAlign: 'center' }} onClick={decrement}> Increment</button>
+            <button className='btn btn-primary' style={{ textAlign: 'center' }} onClick={increment}> Increment</button>
+            <button className='btn btn-danger' style={{ textAlign: 'center' }} onClick={decrement}> Decrement</button>
 
         </div>
     )
